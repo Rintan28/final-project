@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'kelompok3/devops-final-project'
+        IMAGE_NAME = 'eve56/final-project'
         IMAGE_TAG = 'latest'
     }
 
@@ -35,7 +35,7 @@ pipeline {
         // Optional: You can add a stage to push image to DockerHub if needed
         stage('Push to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
                     sh "docker push $IMAGE_NAME:$IMAGE_TAG"
                 }

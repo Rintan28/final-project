@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18'
+        }
     
     environment {
         DOCKER_REGISTRY = 'your-registry'

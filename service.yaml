@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: final-project-service
+  namespace: final-project
 spec:
   selector:
     app: final-project

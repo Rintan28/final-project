@@ -1,0 +1,21 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-website
+  namespace: final-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: static-website
+  template:
+    metadata:
+      labels:
+        app: static-website
+    spec:
+      containers:
+      - name: website
+        image: nginx:alpine
+        ports:
+        - containerPort: 80

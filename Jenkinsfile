@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18'
-        }
-    }
+    agent any
     
     environment {
         DOCKER_REGISTRY = 'your-registry'
@@ -19,6 +15,11 @@ pipeline {
         }
         
         stage('Test') {
+            agent {
+                docker {
+                    image 'node:18'
+                }
+            } 
             steps {
                 sh 'npm install -g html-validate'
                 sh 'html-validate src/*.html'

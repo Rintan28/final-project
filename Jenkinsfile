@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo '🚀 Running container locally (optional for test)...'
                 script {
-                    sh "docker run -d -p 8080:80 --name devops-final-container $IMAGE_NAME:$IMAGE_TAG"
+                    sh "docker run -d -p 8081:80 --name devops-final-container $IMAGE_NAME:$IMAGE_TAG"
                 }
             }
         }

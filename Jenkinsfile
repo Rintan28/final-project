@@ -19,7 +19,7 @@ pipeline {
                 sh '''
                     # Install locally (no sudo needed)
                     npm install html-validate
-                    npx html-validate src/*.html || echo "HTML validation done"
+                    npx html-validate *.html || echo "HTML validation done"
             
                     # Basic file checks
                     ls -la src/

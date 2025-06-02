@@ -15,11 +15,6 @@ pipeline {
         }
         
         stage('Test') {
-            agent {
-                docker {
-                    image 'node:18'
-                }
-            } 
             steps {
                 sh 'npm install -g html-validate'
                 sh 'html-validate src/*.html'

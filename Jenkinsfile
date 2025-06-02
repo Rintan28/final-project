@@ -3,6 +3,7 @@ pipeline {
         docker {
             image 'node:18'
         }
+    }
     
     environment {
         DOCKER_REGISTRY = 'your-registry'

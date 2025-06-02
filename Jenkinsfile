@@ -9,8 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo '📦 Cloning repository...'
-                checkout scm
+                git url: 'https://github.com/Rintan28/final-project.git', branch: 'main'
             }
         }
 
